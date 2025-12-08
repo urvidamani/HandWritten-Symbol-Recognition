@@ -1,0 +1,9 @@
+numpy
+pandas 
+fastapi
+uvicorn
+scikit-learn
+flask
+flask-cors
+pillow
+scikit-image

@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "hsrapi"
+version = "0.1.0"
+description = ""
+authors = ["urvidamani <updamani141@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Flask = "3.0.3"
+pillow = "10.3.0"
+scikit-learn = "1.2.2"
+numpy="1.25.2"
+flask-cors = "4.0.1"
+matplotlib = "3.9.1"
+scikit-image = "0.24.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
