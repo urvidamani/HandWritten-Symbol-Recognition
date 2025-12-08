@@ -90,6 +90,8 @@ Layer	Technology
 🌐 API	REST (JSON)
 🚀 Quick Start — Run the Entire Project
 
+
+# Shortcut
 # Start Backend
 cd hsrapi
 python -m venv venv
