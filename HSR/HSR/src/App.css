@@ -1,0 +1,355 @@
+/* body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: url('http://crystalclearmaths.com/wp-content/uploads/2015/12/Mathematical-Symbols.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  text-align: center;
+  color: #000;
+  
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+canvas {
+  border: 2px solid #333;
+  background-color: white;
+  cursor: crosshair;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: block;
+  margin: 0 auto;
+}
+
+.button-container {
+  margin-top: 20px;
+}
+
+button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #009dff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: #207dda;
+}
+
+.save-container {
+  margin-top: 20px;
+  text-align: center;
+  color: #000;
+}
+
+.prompt-box {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  border: 2px solid #333;
+  background-color: #f0c38c;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.prompt-box p {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.dropdown-wrapper {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.dropdown-wrapper label {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.dropdown-wrapper select {
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #000;
+}
+
+.save-container button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #009dff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.save-container button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.save-container button:hover:not(:disabled) {
+  background-color: #207dda;
+}
+
+.output-container {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  border: 2px solid #333;
+  background-color: #c8bfbf;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #000;
+}
+
+.version-container {
+  margin-top: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  border: 2px solid #333;
+  background-color: #c8ffbf;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #000;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.help-table table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.help-table th,
+.help-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.help-table th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: #000;
+} */
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: url('http://crystalclearmaths.com/wp-content/uploads/2015/12/Mathematical-Symbols.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+/* Main container with glass effect */
+.container {
+  background: rgba(255, 255, 255, 0.1);
+  margin-top: 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Canvas */
+canvas {
+  border: none;
+  background-color: #fff;
+  cursor: crosshair;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  display: block;
+  margin: 0 auto;
+}
+
+/* Buttons */
+.button-container {
+  margin-top: 20px;
+}
+
+button {
+  margin: 8px;
+  padding: 12px 24px;
+  font-size: 16px;
+  color: #fff;
+  background: linear-gradient(135deg, #009dff, #0073e6);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #00c6ff, #0073e6);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Output + prompt styling */
+.output-container,
+.prompt-box,
+.version-container {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.output-container {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.prompt-box {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.version-container {
+  background: rgba(0, 255, 128, 0.2);
+  color: #fff;
+}
+
+/* Dropdowns */
+.dropdown-wrapper select {
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.dropdown-wrapper select:hover {
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(0, 157, 255, 0.5);
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: #1e1d1d;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.help-table table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.help-table th,
+.help-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.help-table th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
