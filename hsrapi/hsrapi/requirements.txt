@@ -1,4 +1,6 @@
 numpy
+gunicorn
+flask-cors
 pandas 
 fastapi
 uvicorn
