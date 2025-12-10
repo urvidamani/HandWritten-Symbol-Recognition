@@ -22,7 +22,7 @@ function App() {
 
   const fetchModelVersion = async () => {
     try {
-      const response = await fetch("http://localhost:5000/version");
+      const response = await fetch(process.env.REACT_APP_API_URL || "http://localhost:5000/version");
       if (!response.ok) {
         throw new Error(`Error: ${response.statusText}`);
       }
@@ -73,7 +73,7 @@ function App() {
     setLoading(true);
     const base64Image = getBase64Image();
     try {
-      const response = await fetch("http://localhost:5000/classify", {
+      const response = await fetch(process.env.REACT_APP_API_URL ||"http://localhost:5000/classify", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ image: base64Image }),
@@ -97,7 +97,7 @@ function App() {
     setLoading(true);
     const base64Image = getBase64Image();
     try {
-      const response = await fetch("http://localhost:5000/save", {
+      const response = await fetch( process.env.REACT_APP_API_URL || "http://localhost:5000/save", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ image: base64Image, symbol: selectedSymbol }),
@@ -135,7 +135,7 @@ function App() {
   const handleTrainClick = async () => {
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:5000/retrain", {
+      const response = await fetch(process.env.REACT_APP_API_URL ||"http://localhost:5000/retrain", {
         method: "POST",
       });
       if (!response.ok) {
